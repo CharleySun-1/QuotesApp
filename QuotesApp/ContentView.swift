@@ -8,10 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+   
+    //MARK: Stored properties
+    @State var someText = "Hello, world!"
+    
+    //MARK: Computed properties
     var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
+        
+        
+        VStack {
+            Text(someText)
+                .padding()
+                .onAppear() {
+                // Invoke the function to get a joke
+                    //This is the call site
+                    fetchQuote()
+                }
+
+            Button("Get another joke") {
+                fetchQuote()
+            }
+        }
+           }
 }
 
 struct ContentView_Previews: PreviewProvider {
