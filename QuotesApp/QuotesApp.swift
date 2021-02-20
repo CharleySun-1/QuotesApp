@@ -8,7 +8,9 @@
 import Foundation
 
 struct Quotes: Decodable {
-    let id: String
-    let quote: String
-    let status: Int
+    let quoteText: String
+    let quoteAuthor: String
+    let senderName: String
+    let senderLink: String
+    let quoteLink: String
 }
